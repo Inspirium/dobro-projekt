@@ -30,7 +30,28 @@
                 <div class="form-group">
                     <label for="location" class="col-sm-6 control-label">Gdje živite?</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="location" name="location" placeholder="Zagreb">
+                        <select name="location" id="location" class="form-control">
+                            <option value="1">Grad Zagreb</option>
+                            <option value="2">Bjelovarsko-bilogorska županija</option>
+                            <option value="3">Brodsko-posavska županija</option>
+                            <option value="4">Dubrovačko-neretvanska županija</option>
+                            <option value="5">Istarska županija</option>
+                            <option value="6">Karlovačka županija</option>
+                            <option value="7">Koprivničko-križevačka županija</option>
+                            <option value="8">Krapinsko-zagorska županija</option>
+                            <option value="9">Ličko-senjska županija</option>
+                            <option value="10">Međimurska županija</option>
+                            <option value="11">Osječko-baranjska županija</option>
+                            <option value="12">Požeško-slavonska županija</option>
+                            <option value="13">Primorsko-goranska županija</option>
+                            <option value="14">Šibensko-kninska županija</option>
+                            <option value="15">Sisačko-moslavačka županija</option>
+                            <option value="16">Splitsko-dalmatinska županija</option>
+                            <option value="17">Varaždinska županija</option>
+                            <option value="18">Virovitičko-podravska županija</option>
+                            <option value="19">Zadarska županija</option>
+                            <option value="20">Zagrebačka županija</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
