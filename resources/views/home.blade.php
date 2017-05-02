@@ -9,6 +9,7 @@
         <div class="col col-md-6">
             <h1>Napiši što je dobro  u Hrvatskoj i dodaj svoj pin</h1>
             <form class="form-horizontal" method="post">
+                {{ csrf_field() }}
                 <div class="form-group">
                     <label class="radio-inline">
                         <input type="radio" name="marker" id="inlineRadio1" value="crveni"> crveni

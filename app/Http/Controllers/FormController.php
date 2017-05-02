@@ -43,6 +43,6 @@ class FormController extends Controller {
 			'location' => $request->get('location')
 		]);
 
-		return response()->json(['message' => 'success']);
+		return view('home');
 	}
 }
