@@ -15,7 +15,15 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::post('/', 'FormController@postForm');
+
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+Route::group(['prefix' => 'admin'], function() {
+	Route::get('/', 'FormController@showEntries');
+	Route::get('approve/{id}', 'FormController@approveEntry');
+	Route::get('delete/{id}', 'FormController@deleteEntry');
+});
 

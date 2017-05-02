@@ -19,6 +19,7 @@ class CreateEntriesTable extends Migration
             $table->text('description')->nullable();
             $table->string('location')->nullable();
             $table->string('marker')->nullable();
+            $table->boolean('approved')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

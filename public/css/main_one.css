@@ -71,7 +71,7 @@ body {
     margin: 0 auto;
     padding-left: 0px;
     padding-right: 0px;
-    
+
 }
 
 .author {
@@ -103,7 +103,7 @@ body {
 
 .text {
     font-family: 'Open Sans';
-    font-size: 14px; 
+    font-size: 14px;
     color: #fff;
     text-align: left;
     margin: 45px;
@@ -112,7 +112,7 @@ body {
 
 .lead {
     font-family: "superclarendonregular";
-    font-size: 34px !important; 
+    font-size: 34px !important;
     color: #fff !important;
     line-height: 40px !important;
     text-align: center !important;
@@ -142,7 +142,7 @@ body {
 
 .text_lead {
     font-family: 'Open Sans';
-    font-size: 16px; 
+    font-size: 16px;
     color: #fff;
     text-align: center;
     line-height: 30px;
@@ -159,7 +159,7 @@ body {
 
 .title_box {
     font-family: "superclarendonregular";
-    font-size: 34px; 
+    font-size: 34px;
     color: #fff;
     text-align: center;
     font-size: 36px;
@@ -216,7 +216,7 @@ body {
 
 .advices_text {
     font-family: 'Open Sans';
-    font-size: 13px; 
+    font-size: 13px;
     color: #fff;
     text-align: center;
     margin: 5px 10px 10px 10px;
@@ -225,7 +225,7 @@ body {
 
 .container.flex.f_wrap.f_distribution h2  {
     font-family: 'Open Sans';
-    font-size: 60px; 
+    font-size: 60px;
     color: #fff;
     text-align: center;
     line-height: 76px;
@@ -248,7 +248,7 @@ body {
 }
 
 .f_distribution {
-    
+
 }
 
 .opacity_90 {
@@ -314,7 +314,7 @@ body {
 }
 
 #OneChart margin_graph {
-    
+
 }
 
 .margin_graph {
@@ -338,7 +338,7 @@ body {
 
 .text_1 {
     font-family: 'Open Sans';
-    font-size: 14px; 
+    font-size: 14px;
     color: #fff;
     text-align: left;
     margin: 0 40px;
@@ -369,11 +369,11 @@ body {
     margin-bottom: -5px;
     height: 20px;
     display: inline-block;
-    
+
 }
 
 .link {
-    
+
 }
 
 a:active,
