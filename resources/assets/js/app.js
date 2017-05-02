@@ -1,4 +1,5 @@
-require('./bootstrap');
+var d3 = require('d3');
+var topojson = require('topojson');
 
 var width = 500,
     height = 500;

@@ -1,0 +1,75 @@
+#chart_div {
+    height: 500px;
+}
+
+#piechart_3d {
+    height: 500px;
+}
+
+#line_top_x {
+    height: 500px;
+}
+
+.spacer {
+    height: 500px;
+    width: 100%;
+    background-color: #333;
+}
+#TwoChart {
+    height: 600px;
+    border: 0;
+}
+
+#OneChart {
+    border: 0;
+}
+
+.main_bckg {
+    background-color: #1F1B2B;
+    margin-top: -19px;
+    
+}
+
+.container_1 {
+    max-width: 570px;
+}
+
+
+
+.flex_1 {
+    
+}
+
+.wht_bckg {
+    height: 170px;
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+}
+
+.rts-counter {
+    margin: 0 auto;
+    max-width: 1180px;
+}
+
+.container_2 {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding-left: 0px;
+    padding-right: 0px;
+    height: 800px;
+}
+
+.main_nav .nav a {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.om_hep {
+    background-color: rgba(0, 66, 25, 0.93);
+    padding: 8px 10px;
+    margin: 10px 460px;
+}
+
+.size_2graphs {
+    margin-right: 20px;
+}

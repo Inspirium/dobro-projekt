@@ -1,0 +1,306 @@
+
+
+/* Default style classes used by the framework template*/
+
+/*error-style css*/
+.error-page .logo img {
+  padding: 0px 0px 0px 10px;
+}
+
+.error-page .subtitle img {
+  padding: 0px 0px 0px 10px;
+}
+
+.error-page .title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/*end of error-style css*/
+
+/* Override bootstrap default carousel indicator styles*/
+.carousel-indicator-holder ol {
+  padding: 0;
+}
+
+.carousel-indicator-holder .carousel-indicators {
+  position: static;
+  margin: 10px 0;
+  padding: 0;
+  width: 100%;
+}
+
+.carousel-indicator-holder .carousel-indicators li {
+  background-color: #CCCCCC;
+  border: 1px solid #CCCCCC;
+  border-radius: 0;
+}
+
+.carousel-indicator-holder .carousel-indicators li.active {
+  background-color: #666666;
+}
+
+/* end of carousel indicator styles */
+
+/*megadropdown css styles*/
+
+ul.nav li.megadropdown ul.dropdown-menu {
+  width: 100%;
+  z-index: 15000;
+}
+
+ul.nav li.megadropdown ul.dropdown-menu  > li {
+  width: 100%;
+  float: left;
+  padding: 10px;
+}
+
+ul.nav li.megadropdown {
+  position: static;
+}
+
+/* end of megadropdown css styles*/
+
+footer .well {
+  padding-top: 4px;
+}
+
+/* Fix floating issue in case of uneven cells in a grid */
+.grid-cell > div,
+.grid-cell > article,
+.grid-cell > section {
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  float: none;
+  margin-right: -4px
+}
+
+/* CSS for responsive navbar group */
+.collapse {
+  position: static;
+}
+
+@media (max-width: 940px) {
+  .nav-collapse .dropdown.open:before, .nav-collapse .dropdown.open:after {
+    display: none;
+  }
+
+  .nav-collapse .dropdown.open > .dropdown-menu {
+    position: static;
+    margin: 0 15px;
+  }
+
+  .nav-collapse .dropdown.open > .dropdown-menu > li {
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .row-rigid .media .pull-left,
+  .media .pull-left {
+    float: left !important;
+  }
+
+  .row-rigid .media .pull-right,
+  .media .pull-right {
+    float: right !important;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  ul.nav li.megadropdown:hover ul.dropdown-menu {
+    display: block;
+  }
+
+  ul.nav li.megadropdown.open:hover ul.dropdown-menu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .megadropdown .caret {
+    display: none;
+  }
+}
+
+/* End of CSS for responsive navbar group */
+
+.posterframe-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.posterframe-wrapper .glyphicon {
+  bottom: 0;
+  color: #FFFFFF;
+  font-size: 2.875em;
+  height: 48px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 48px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.posterframe-wrapper .glyphicon:hover {
+  color: #ff4500;
+}
+
+/* End of style classes used by the framework template*/
+
+/*Custom style classes for search component widget (order view) */
+.list-inline .disabled > a,
+.list-inline .disabled > a:hover,
+.list-inline .disabled > a:focus,
+.list-inline .disabled > span {
+  color: #999999;
+  cursor: not-allowed;
+  background-color: #ffffff;
+}
+/*end of custom style classes for search component widget*/
+/*css style classes for master widget*/
+p.master-widget-nesting-limit-error {
+  color: red;
+  background-color: inherit;
+  margin: 0 0 10px 0;
+}
+/*end of custom style classes for master widget*/
+ul.wf-cuepoints {
+  list-style: outside none none;
+  margin: 20px 0;
+  padding: 0;
+}
+li.wf-cuepoint {
+  cursor: pointer;
+  color: #428bca;
+  margin: 10px 0;
+  font-size: 18px;
+}
+li.wf-cuepoint p {
+  color: #000;
+  font-size: 14px;
+  margin: 5px 0 0;
+}
+
+.posterframe-wrapper .wf-close-caption {
+  position: absolute;
+  top: 8px;
+  left: auto;
+  right: 40px;
+  display: block;
+  width: 20px;
+  height: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 10px;
+  display: none;
+}
+
+.posterframe-wrapper:hover .wf-close-caption {
+  display: block;
+}
+
+.wf-close-caption.on{
+  background: #FFFFFF;
+  color: #000000;
+}
+
+.wf-close-caption.off{
+  background: #000;
+  color: #cccccc;
+}
+/* Custom style classes for teaser widget */
+div.carousel div.animate,
+div.img-container div.animate{
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.5s, opacity 0.3s linear;
+}
+
+div.carousel:hover div.animate,
+div.img-container:hover div.animate{
+  visibility: visible;
+  opacity: 0.5;
+  transition-delay: 0s;
+}
+
+.picture-caption {
+  background: none repeat scroll 0 0 #000000;
+  bottom: 0;
+  display: block;
+  left: 0;
+  opacity: 0.75;
+  filter:alpha(opacity=75); /* For IE8 and earlier */
+  position: absolute;
+  padding: 15px;
+  right: 0;
+}
+
+.picture-caption h4,
+.carousel-caption h4{
+  margin: 0;
+}
+
+.inline-close {
+  background: rgba(245, 245, 245, 0.3);
+  display: inline-block;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none !important;
+  width: 100%;
+  font-size: 16px;
+}
+
+.block-link, .block-link:hover {
+  text-decoration: none;
+}
+
+.text-biggest {font-size: 38.5px; line-height: normal;}  /* h1*/
+.text-bigger {font-size: 31.5px; line-height: normal;}  /* h2*/
+.text-big {font-size: 24.5px; line-height: normal;}  /* h3*/
+.text-small {font-size: 17.5px}  /*  h4*/
+.text-smaller {font-size: 14px;}  /*  h5*/
+.text-smallest {font-size: 11.9px;}  /*  h6*/
+
+.text-biggest, .text-bigger, .text-big,
+.text-small, .text-smaller, .text-smallest {
+  line-height: normal;
+}
+/*Share feature related CSS starts*/
+
+.pull-right .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+/*Share feature related CSS ends*/
+
+.link-block, .wf-gallery-selection-onclick {
+  cursor: pointer;
+}
+
+.flowplayer {
+  background-color: #000;
+}
+
+/*Embedded youtube related CSS fix*/
+.youtubeWrapper {
+  position: relative;
+  height: 0;
+  padding-top: 25px;
+  padding-bottom: 56.25%;  /*16:9*/
+}
+
+.youtubeWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
