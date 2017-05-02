@@ -55,6 +55,7 @@ d3.json("js/hrv.json", function(error, uk) {
             }
         }
     }
+    console.log(dots);
 
 });
 
