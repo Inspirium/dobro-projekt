@@ -7,13 +7,23 @@
     line-height: 4.6rem;
 }
 
+.overtitle {
+    background-color: #333;
+    color: #fff;
+    font-size: 1.3rem;
+    padding: 7px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 7px;
+}
+
 .blue_text {
     color: #07AEC4;
 }
 
 .total {
     position: absolute;
-    bottom: 165px;
+    bottom: 35px;
 }
 
 .big_title {
@@ -34,9 +44,10 @@
     width: 29px;
     height: 43px;
     display: inline-block;
-    margin-right: 20px;
+    margin-right: 5px;
+    margin-top: 10px;
 }
-    
+
 .locator-1 {
     @extend .locator; 
     background-image: url(../images/col_1.svg);
@@ -60,6 +71,71 @@
 .locator-6 {
     @extend .locator; 
     background-image: url(../images/col_6.svg);
+}
+    
+////////// Radio style
+
+input[type="radio"] {
+    display:none;
+}
+
+input[id="inlineRadio1"] + label span {
+    @extend .locator-1;
+}
+
+input[id="inlineRadio2"] + label span {
+    @extend .locator-2;
+}
+
+input[id="inlineRadio3"] + label span {
+    @extend .locator-3;
+}
+
+input[id="inlineRadio4"] + label span {
+    @extend .locator-4;
+}
+
+input[id="inlineRadio5"] + label span {
+    @extend .locator-5;
+}
+
+input[id="inlineRadio6"] + label span {
+    @extend .locator-6;
+}
+
+input[type="radio"]:checked + label span {
+    content: "zasto ne radi!?!?";
+    display: block;
+    width: 100px;
+    height: 100px;
+    color: aqua;
+}
+
+.d-flex1 {
+    display: flex;
+}
+
+.d-flex2 {
+    display: flex;
+}
+
+@media screen and (max-width: 920px) {
+    
+    .d-flex2 {
+        flex-direction: column;
+    }
+    
+    .order {
+        order: 3;
+    }
+    
+    .pr-0 {
+        padding-left: 0;
+    }
+        
+    .cloud-4 {
+        display: none;
+    }   
 }
 
 .gr__dobroprojekt1_app {
@@ -97,6 +173,16 @@
     position: absolute;
     top: 224px;
     left: 260px;
+    z-index: -1;
+}
+
+.cloud-4 {
+    width: 257px;
+    height: 206px;
+    background-image: url(../images/people_1.svg);
+    position: absolute;
+    top: 262px;
+    left: 320px;
     z-index: -1;
 }
 
@@ -146,6 +232,19 @@
     padding-left: 23px;
 }
 
+.btn-danger2 {
+    background-color: #F2717F;
+    border: none;
+    border-radius: inherit;
+    color: #fff;
+    float: right;
+    height: 60px;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-family: 'superclarendonregular';
+    padding-left: 15px;
+}
+
 .btn-danger1:after {
     content: " ";
     background-image: url(../images/col_white.svg);
@@ -153,4 +252,36 @@
     width: 20px;
     margin: 0 10px 0 20px;
     display: inline-block;
+}
+
+.close {
+    font-size: 71px;
+}
+
+
+////////// Modal
+
+.modal-content .name {
+    text-align: left;
+    font-family: 'superclarendonregular';
+    color: #aaa;
+    height: 50px;
+    font-size: 2rem;
+    line-height: 4rem;
+}
+
+.modal-content .city {
+    text-align: left;
+    font-family: 'superclarendonregular';
+    color: #aaa;
+    font-size: 3rem;
+    color: #07AEC4;
+}
+
+.modal-content .desc {
+    text-align: left;
+    font-family: 'superclarendonregular';
+    color: #aaa;
+    font-size: 4rem;
+    line-height: 4.5rem;
 }

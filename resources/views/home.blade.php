@@ -1,39 +1,83 @@
 @extends('jutarnji_layout')
 
 @section('content')
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="name">Ime i prezime</div>
+        <div class="city">Zadar</div>
+      </div>
+      <div class="modal-body">
+        <div class="locator-1"></div>
+        <div class="desc">U Zadru je najljepši zalazak sunca na svijetu</div> 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger2" data-dismiss="modal">Zatvori</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
 <div class="container">
-    <div class="row">
-        <div class="col col-md-4 total">
-            <h1 class="big_title"><span class="big_text">Broj dobroga</span> 11234</h1>
-        </div>
-      
-        <div class="col col-md-6" id="map">
+    <div class="row d-flex2">
+        <div class="col col-md-6 order" id="map">
             <div class="cloud-1"></div>
             <div class="cloud-2"></div>
             <div class="cloud-3"></div>
+            <div class="cloud-4"></div>
+            <div class="col col-md-4 total">
+                <h1 class="big_title"><span class="big_text">Broj dobroga</span> 11234</h1>
+            </div>
         </div>
         <div class="col col-md-6">
+            <h2 class="overtitle">Omogućuje dobro</h2>
             <h1 class="title">Napiši što je <span class="blue_text">dobro</span> u Hrvatskoj i dodaj svoj pin</h1>
-            <div class="locators">
-                <div class="locator-1"></div>
-                <div class="locator-2"></div>
-                <div class="locator-3"></div>
-                <div class="locator-4"></div>
-                <div class="locator-5"></div>
-                <div class="locator-6"></div>
-            </div>
             <form class="form-horizontal" method="post">
                 {{ csrf_field() }}
-                <div class="form-group">
+                <div class="form-group d-flex1">
+<!--
                     <label class="radio-inline">
                         <input type="radio" name="marker" id="inlineRadio1" value="crveni"> crveni
                     </label>
                     <label class="radio-inline">
                         <input type="radio" name="marker" id="inlineRadio2" value="plavi"> plavi
                     </label>
-                    <label class="radio-inline">
+                    <label class="radio-inline"><span></span>
                         <input type="radio" name="marker" id="inlineRadio3" value="zeleni"> zeleni
                     </label>
+-->
+                    
+                    <div>
+                         <input type="radio" name="marker" id="inlineRadio1" value="crveni" />
+                        <label class="radio-inline" for="radio02"><span></span></label>
+                    </div>
+                    <div>
+                         <input type="radio" name="marker" id="inlineRadio2" value="crveni" />
+                        <label class="radio-inline" for="radio02"><span></span></label>
+                    </div>
+                    <div>
+                         <input type="radio" name="marker" id="inlineRadio3" value="crveni" />
+                        <label class="radio-inline" for="radio02"><span></span></label>
+                    </div>
+                    <div>
+                         <input type="radio" name="marker" id="inlineRadio4" value="crveni" />
+                        <label class="radio-inline" for="radio02"><span></span></label>
+                    </div>
+                    <div>
+                         <input type="radio" name="marker" id="inlineRadio5" value="crveni" />
+                        <label class="radio-inline" for="radio02"><span></span></label>
+                    </div>
+                    <div>
+                         <input type="radio" name="marker" id="inlineRadio6" value="crveni" />
+                         <label class="radio-inline" for="radio02"><span></span></label>
+                    </div>
                 </div>
                                 
                 <div class="form-group d-flex form_a">
@@ -76,7 +120,7 @@
                     </div>
                 </div>
             </form>
-            <button type="submit" class="btn btn-danger1">Dodaj</button>
+            <button type="submit" class="btn btn-danger1" data-toggle="modal" data-target="#myModal">Dodaj</button>
         </div>
     </div>
 </div>
