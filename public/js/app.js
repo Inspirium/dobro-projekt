@@ -63,15 +63,15 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var d3 = __webpack_require__(4);
-var topojson = __webpack_require__(10);
+var d3 = __webpack_require__(2);
+var topojson = __webpack_require__(3);
 
 var width = 500,
     height = 500;
@@ -207,9 +207,7 @@ function poissonDiscSampler(width, height, radius) {
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 2 */,
-/* 3 */,
-/* 4 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://d3js.org Version 4.8.0. Copyright 2017 Mike Bostock.
@@ -16888,19 +16886,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 
 /***/ }),
-/* 5 */,
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(0);
-module.exports = __webpack_require__(1);
-
-
-/***/ }),
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/topojson/topojson Version 3.0.0. Copyright 2017 Mike Bostock.
@@ -18685,6 +18671,14 @@ exports.sphericalTriangleArea = sphericalTriangleArea;
 Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(0);
+module.exports = __webpack_require__(1);
 
 
 /***/ })

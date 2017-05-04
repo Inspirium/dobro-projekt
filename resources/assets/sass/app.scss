@@ -1,3 +1,156 @@
 .hrvatska {
-  fill: #ddc;
+  fill: #cce8f0;
+}
+
+.title {
+    font-size: 4rem;
+    line-height: 4.6rem;
+}
+
+.blue_text {
+    color: #07AEC4;
+}
+
+.total {
+    position: absolute;
+    bottom: 165px;
+}
+
+.big_title {
+    font-family: 'superclarendonregular';
+    font-size: 8rem;
+    color: #07AEC4;
+}
+
+.big_text {
+    font-family: 'superclarendonregular';
+    font-size: 2.5rem;
+    color: #333;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.locator {
+    width: 29px;
+    height: 43px;
+    display: inline-block;
+    margin-right: 20px;
+}
+    
+.locator-1 {
+    @extend .locator; 
+    background-image: url(../images/col_1.svg);
+}    
+.locator-2 {
+    @extend .locator; 
+    background-image: url(../images/col_2.svg); 
+}    
+.locator-3 {
+    @extend .locator; 
+    background-image: url(../images/col_3.svg);
+}    
+.locator-4 {
+    @extend .locator; 
+    background-image: url(../images/col_4.svg);
+}    
+.locator-5 {
+    @extend .locator; 
+    background-image: url(../images/col_5.svg);
+}    
+.locator-6 {
+    @extend .locator; 
+    background-image: url(../images/col_6.svg);
+}
+
+.gr__dobroprojekt1_app {
+    background-image: url(../images/background.png);
+}
+
+.cloud {
+    position: relative;
+}
+
+.cloud-1 {
+    width:149px;
+    height:37px;
+    background-image: url(../images/cloud_1.svg);
+    position: absolute;
+    top: 70px;
+    left: 11px;
+    z-index: -1;
+}
+
+.cloud-2 {
+    width: 126px;
+    height: 88px;
+    background-image: url(../images/cloud_2.svg);
+    position: absolute;
+    top: 62px;
+    left: 441px;
+    z-index: -1;
+}
+
+.cloud-3 {
+    width: 88px;
+    height: 39px;
+    background-image: url(../images/cloud_3.svg);
+    position: absolute;
+    top: 224px;
+    left: 260px;
+    z-index: -1;
+}
+
+.pin_color_ {
+    &1 {fill: #305777};
+    &2 {fill: #6D5C7D};
+    &3 {fill: #C16C86};
+    &4 {fill: #F2717F};
+    &5 {fill: #F9B293};
+    &6 {fill: #66BE6C};
+}
+
+.form_a {
+    background-color: #84C8D7;
+}
+
+.form-horizontal .control-label {
+    text-align: left;
+    font-family: 'superclarendonregular';
+    color: #fff;
+    height: 50px;
+    font-size: 2rem;
+    line-height: 3.4rem;
+}
+
+.form-control {
+    background-color: #CCE8F0;
+    border: none;
+    color: #333;
+    height: 50px;
+} 
+
+.pr-0 {
+    padding-right: 0;
+}
+
+.btn-danger1 {
+    background-color: #F2717F;
+    border: none;
+    border-radius: inherit;
+    color: #fff;
+    float: right;
+    height: 60px;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-family: 'superclarendonregular';
+    padding-left: 23px;
+}
+
+.btn-danger1:after {
+    content: " ";
+    background-image: url(../images/col_white.svg);
+    height: 30px;
+    width: 20px;
+    margin: 0 10px 0 20px;
+    display: inline-block;
 }

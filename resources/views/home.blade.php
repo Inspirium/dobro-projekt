@@ -3,11 +3,25 @@
 @section('content')
 <div class="container">
     <div class="row">
+        <div class="col col-md-4 total">
+            <h1 class="big_title"><span class="big_text">Broj dobroga</span> 11234</h1>
+        </div>
+      
         <div class="col col-md-6" id="map">
-
+            <div class="cloud-1"></div>
+            <div class="cloud-2"></div>
+            <div class="cloud-3"></div>
         </div>
         <div class="col col-md-6">
-            <h1>Napiši što je dobro  u Hrvatskoj i dodaj svoj pin</h1>
+            <h1 class="title">Napiši što je <span class="blue_text">dobro</span> u Hrvatskoj i dodaj svoj pin</h1>
+            <div class="locators">
+                <div class="locator-1"></div>
+                <div class="locator-2"></div>
+                <div class="locator-3"></div>
+                <div class="locator-4"></div>
+                <div class="locator-5"></div>
+                <div class="locator-6"></div>
+            </div>
             <form class="form-horizontal" method="post">
                 {{ csrf_field() }}
                 <div class="form-group">
@@ -21,15 +35,16 @@
                         <input type="radio" name="marker" id="inlineRadio3" value="zeleni"> zeleni
                     </label>
                 </div>
-                <div class="form-group">
-                    <label for="name" class="col-sm-6 control-label">Ime:</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Ivan">
+                                
+                <div class="form-group d-flex form_a">
+                    <label for="name" class="col-sm-6 control-label self-align-center">Ime:</label>
+                    <div class="col-sm-6 pr-0">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="">
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group form_a">
                     <label for="location" class="col-sm-6 control-label">Gdje živite?</label>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 pr-0">
                         <select name="location" id="location" class="form-control">
                             <option value="1">Grad Zagreb</option>
                             <option value="2">Bjelovarsko-bilogorska županija</option>
@@ -54,14 +69,14 @@
                         </select>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group form_a">
                     <label for="description" class="col-sm-6 control-label">Što je dobro u Hrvatskoj?</label>
-                    <div class="col-sm-6">
-                        <textarea id="description" name="description" class="form-control" rows="3" placeholder="Pametna klupa :)"></textarea>
+                    <div class="col-sm-6 pr-0">
+                        <textarea id="description" name="description" class="form-control" rows="3" placeholder=""></textarea>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-danger">Dodaj</button>
             </form>
+            <button type="submit" class="btn btn-danger1">Dodaj</button>
         </div>
     </div>
 </div>
