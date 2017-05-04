@@ -35,21 +35,22 @@ d3.json("js/hrv.json", function(error, uk) {
 
         feature = {type: "Feature", geometry: {type: "Polygon", coordinates: p}}
         var bounds = path.bounds(feature);
-        var sample = poissonDiscSampler(bounds[1][0] - bounds[0][0], bounds[1][1] - bounds[0][1], 2 * 2);
+        var sample = poissonDiscSampler(bounds[1][0] - bounds[0][0], bounds[1][1] - bounds[0][1], 6 * 2);
         s = true;
         while (s) {
             var s = sample();
             if (s) {
                 x = bounds[0][0] + s[0];
                 y = bounds[0][1] + s[1];
-
+                i = Math.floor(Math.random() * 6) + 1;
                 if (pointInPolygon(projection.invert([x, y]), p[0])) {
                     //TODO: place marker
-                    svg.append("circle")
-                        .attr('cx', x)
-                        .attr('cy', y)
-                        .attr('r', 2)
-                        .attr('fill', '#b00');
+                    svg.append("image")
+                        .attr('width', 20)
+                        .attr('height', 20)
+                        .attr('xlink:href', '/img/col_'+i+'.svg')
+                        .attr('class', 'locator')
+                        .attr("transform", function(d) {return "translate(" + x +',' + y + ")";});;
                     dots++
                 }
             }

@@ -42,17 +42,6 @@
             <form class="form-horizontal" method="post">
                 {{ csrf_field() }}
                 <div class="form-group d-flex1">
-<!--
-                    <label class="radio-inline">
-                        <input type="radio" name="marker" id="inlineRadio1" value="crveni"> crveni
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="marker" id="inlineRadio2" value="plavi"> plavi
-                    </label>
-                    <label class="radio-inline"><span></span>
-                        <input type="radio" name="marker" id="inlineRadio3" value="zeleni"> zeleni
-                    </label>
--->
 
                     <div>
                          <input type="radio" name="marker" id="inlineRadio1" value="1" />
