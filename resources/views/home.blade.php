@@ -14,7 +14,7 @@
       </div>
       <div class="modal-body">
         <div class="locator-1"></div>
-        <div class="desc">U Zadru je najljepši zalazak sunca na svijetu</div> 
+        <div class="desc">U Zadru je najljepši zalazak sunca na svijetu</div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger2" data-dismiss="modal">Zatvori</button>
@@ -53,33 +53,33 @@
                         <input type="radio" name="marker" id="inlineRadio3" value="zeleni"> zeleni
                     </label>
 -->
-                    
+
                     <div>
-                         <input type="radio" name="marker" id="inlineRadio1" value="crveni" />
-                        <label class="radio-inline" for="radio02"><span></span></label>
+                         <input type="radio" name="marker" id="inlineRadio1" value="1" />
+                        <label class="radio-inline" for="inlineRadio1"><span></span></label>
                     </div>
                     <div>
-                         <input type="radio" name="marker" id="inlineRadio2" value="crveni" />
-                        <label class="radio-inline" for="radio02"><span></span></label>
+                         <input type="radio" name="marker" id="inlineRadio2" value="2" />
+                        <label class="radio-inline" for="inlineRadio2"><span></span></label>
                     </div>
                     <div>
-                         <input type="radio" name="marker" id="inlineRadio3" value="crveni" />
-                        <label class="radio-inline" for="radio02"><span></span></label>
+                         <input type="radio" name="marker" id="inlineRadio3" value="3" />
+                        <label class="radio-inline" for="inlineRadio3"><span></span></label>
                     </div>
                     <div>
-                         <input type="radio" name="marker" id="inlineRadio4" value="crveni" />
-                        <label class="radio-inline" for="radio02"><span></span></label>
+                         <input type="radio" name="marker" id="inlineRadio4" value="4" />
+                        <label class="radio-inline" for="inlineRadio4"><span></span></label>
                     </div>
                     <div>
-                         <input type="radio" name="marker" id="inlineRadio5" value="crveni" />
-                        <label class="radio-inline" for="radio02"><span></span></label>
+                         <input type="radio" name="marker" id="inlineRadio5" value="5" />
+                        <label class="radio-inline" for="inlineRadio5"><span></span></label>
                     </div>
                     <div>
-                         <input type="radio" name="marker" id="inlineRadio6" value="crveni" />
-                         <label class="radio-inline" for="radio02"><span></span></label>
+                         <input type="radio" name="marker" id="inlineRadio6" value="6" />
+                         <label class="radio-inline" for="inlineRadio6"><span></span></label>
                     </div>
                 </div>
-                                
+
                 <div class="form-group d-flex form_a">
                     <label for="name" class="col-sm-6 control-label self-align-center">Ime:</label>
                     <div class="col-sm-6 pr-0">
