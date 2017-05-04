@@ -46,6 +46,7 @@
     display: inline-block;
     margin-right: 5px;
     margin-top: 10px;
+    padding-left: 0px;
 }
 
 .locator-1 {
@@ -104,11 +105,9 @@ input[id="inlineRadio6"] + label span {
 }
 
 input[type="radio"]:checked + label span {
-    content: "zasto ne radi!?!?";
-    display: block;
-    width: 100px;
-    height: 100px;
-    color: aqua;
+    background-image: url(../images/check.svg);
+    width: 40px;
+    height: 28px;
 }
 
 .d-flex1 {
