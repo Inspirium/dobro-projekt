@@ -3,9 +3,13 @@ var topojson = require('topojson');
 
 var width = 783,
     height = 580;
-
+var scale = 5500, center = 17.2;
+if (window.innerWidth < 600) {
+    scale = 3000;
+    center = 20;
+}
 var svg = d3.select("#map").append("svg")
-    .attr("width", width)
+    .attr("width", "100%")
     .attr("height", height)
     .call(d3.zoom().on("zoom", function () {
         svg.attr("transform", d3.event.transform)
@@ -13,8 +17,8 @@ var svg = d3.select("#map").append("svg")
     .append("g");
 
 var projection = d3.geoMercator()
-    .center([17.2, 44.4])
-    .scale(5500)
+    .center([center, 44.4])
+    .scale(scale)
     .translate([width / 2, height / 2]);
 var path = d3.geoPath()
     .projection(projection);
