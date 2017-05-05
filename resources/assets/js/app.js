@@ -1,8 +1,8 @@
 var d3 = require('d3');
 var topojson = require('topojson');
 
-var width = 500,
-    height = 500;
+var width = 783,
+    height = 620;
 
 var svg = d3.select("#map").append("svg")
     .attr("width", width)
@@ -13,8 +13,8 @@ var svg = d3.select("#map").append("svg")
     .append("g");
 
 var projection = d3.geoMercator()
-    .center([16.4, 44.7])
-    .scale(4500)
+    .center([17.2, 44.5])
+    .scale(5750)
     .translate([width / 2, height / 2]);
 var path = d3.geoPath()
     .projection(projection);

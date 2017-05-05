@@ -36,7 +36,7 @@
                 <h1 class="big_title"><span class="big_text">Broj dobroga</span> 11234</h1>
             </div>
         </div>
-        <div class="col col-md-6">
+        <div class="col col-md-4 ml-auto">
             <h2 class="overtitle">Omogućuje dobro</h2>
             <h1 class="title">Napiši što je <span class="blue_text">dobro</span> u Hrvatskoj i dodaj svoj pin</h1>
             <form class="form-horizontal" method="post">

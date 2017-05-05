@@ -3,8 +3,8 @@
 }
 
 .title {
-    font-size: 4rem;
-    line-height: 4.6rem;
+    font-size: 3.7rem;
+    line-height: 4.1rem;
 }
 
 .overtitle {
@@ -15,6 +15,12 @@
     text-transform: uppercase;
     display: inline-block;
     margin-bottom: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.ml-auto {
+    margin-left: auto;
 }
 
 .blue_text {
@@ -23,7 +29,7 @@
 
 .total {
     position: absolute;
-    bottom: 35px;
+    bottom: 64px;
 }
 
 .big_title {
@@ -137,8 +143,13 @@ input[type="radio"]:checked + label span {
     }   
 }
 
-.gr__dobroprojekt1_app {
+.middle {
     background-image: url(../images/background.png);
+    background-size: contain;
+}
+
+#map {
+    z-index: 2;
 }
 
 .cloud {
@@ -161,7 +172,7 @@ input[type="radio"]:checked + label span {
     background-image: url(../images/cloud_2.svg);
     position: absolute;
     top: 62px;
-    left: 441px;
+    left: 611px;
     z-index: -1;
 }
 
@@ -170,18 +181,18 @@ input[type="radio"]:checked + label span {
     height: 39px;
     background-image: url(../images/cloud_3.svg);
     position: absolute;
-    top: 224px;
-    left: 260px;
+    top: 253px;
+    left: 310px;
     z-index: -1;
 }
 
 .cloud-4 {
-    width: 257px;
-    height: 206px;
-    background-image: url(../images/people_1.svg);
+    width: 374px;
+    height: 298px;
+    background-image: url(../images/people.svg);
     position: absolute;
-    top: 262px;
-    left: 320px;
+    top: 280px;
+    left: 410px;;
     z-index: -1;
 }
 
@@ -223,9 +234,9 @@ input[type="radio"]:checked + label span {
     border: none;
     border-radius: inherit;
     color: #fff;
+    line-height: 43px;
     float: right;
-    height: 60px;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     text-transform: uppercase;
     font-family: 'superclarendonregular';
     padding-left: 23px;
@@ -251,6 +262,8 @@ input[type="radio"]:checked + label span {
     width: 20px;
     margin: 0 10px 0 20px;
     display: inline-block;
+    position: relative;
+    top: 5px;
 }
 
 .close {
