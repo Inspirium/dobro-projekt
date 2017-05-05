@@ -29,7 +29,7 @@
 
 .total {
     position: absolute;
-    bottom: 64px;
+    bottom: 40px;
 }
 
 .big_title {
@@ -146,6 +146,7 @@ input[type="radio"]:checked + label span {
 .middle {
     background-image: url(../images/background.png);
     background-size: contain;
+    padding-top: 0;
 }
 
 #map {
@@ -191,7 +192,7 @@ input[type="radio"]:checked + label span {
     height: 298px;
     background-image: url(../images/people.svg);
     position: absolute;
-    top: 280px;
+    top: 263px;
     left: 410px;;
     z-index: -1;
 }
