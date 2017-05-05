@@ -27,8 +27,30 @@ d3.json("js/hrv.json", function(error, uk) {
         .attr("d", path)
         .on('click', function(d) {console.log(path.bounds(d))});
 
-    var dots = 0;
-    lands = topojson.feature(uk, uk.objects.subunits);
+    var lands = topojson.feature(uk, uk.objects.subunits);
+    var data = create_dataset(lands);
+//var data = [1,2,3];
+    svg.selectAll(".locator")
+        .data(data)
+        .enter()
+        .append("image")
+        .attr('width', 20)
+        .attr('height', 20)
+        .attr('xlink:href', function(d) { return '/img/col_'+d.color+'.svg' })
+        .attr("transform", function(d) {
+            return "translate(" + (d.x-10) +',' + (d.y-10) + ")";
+        })
+        .on('click', function(d) {
+            jQuery('#modal-loc').removeClass().addClass('locator-'+ d.color);
+            jQuery('#modal-name').text(d.name);
+            jQuery('#modal-location').text(d.location);
+            jQuery('#modal-text').text(d.text);
+            jQuery('#myModal').modal('show');
+        });
+});
+
+function create_dataset(lands) {
+    var data = [];
     for (var i0 = 0; i0 < lands.features[0].geometry.coordinates.length; i0++) {
 
         p = lands.features[0].geometry.coordinates[i0];
@@ -44,23 +66,13 @@ d3.json("js/hrv.json", function(error, uk) {
                 y = bounds[0][1] + s[1];
                 i = Math.floor(Math.random() * 6) + 1;
                 if (pointInPolygon(projection.invert([x, y]), p[0])) {
-                    svg.append("image")
-                        .attr('width', 20)
-                        .attr('height', 20)
-                        .attr('xlink:href', '/img/col_'+i+'.svg')
-                        .attr('class', 'locator')
-                        .attr("transform", function(d) {return "translate(" + (x-10) +',' + (y-10) + ")";})
-                        .on('click', function() {
-                            alert('Poruka');
-                        });
-                    dots++
+                    data.push({x:x, y:y, color: i, name: 'Ime', location: 'Grad', text: 'Poruka'});
                 }
             }
         }
     }
-    console.log(dots);
-
-});
+    return data;
+}
 
 // PNPOLY
 function pointInPolygon(point, polygon) {

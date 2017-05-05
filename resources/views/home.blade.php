@@ -9,12 +9,12 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <div class="name">Ime i prezime</div>
-        <div class="city">Zadar</div>
+        <div id="modal-name" class="name">Ime i prezime</div>
+        <div id="modal-location" class="city">Zadar</div>
       </div>
       <div class="modal-body">
-        <div class="locator-1"></div>
-        <div class="desc">U Zadru je najljepši zalazak sunca na svijetu</div>
+        <div id="modal-loc" class="locator-1"></div>
+        <div id="modal-text" class="desc">U Zadru je najljepši zalazak sunca na svijetu</div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger2" data-dismiss="modal">Zatvori</button>
