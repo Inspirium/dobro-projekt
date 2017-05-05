@@ -44,27 +44,27 @@
                 <div class="form-group d-flex1">
 
                     <div>
-                         <input type="radio" name="marker" id="inlineRadio1" value="1" />
+                         <input type="radio" name="marker" id="inlineRadio1" value="1" required >
                         <label class="radio-inline" for="inlineRadio1"><span></span></label>
                     </div>
                     <div>
-                         <input type="radio" name="marker" id="inlineRadio2" value="2" />
+                         <input type="radio" name="marker" id="inlineRadio2" value="2" required>
                         <label class="radio-inline" for="inlineRadio2"><span></span></label>
                     </div>
                     <div>
-                         <input type="radio" name="marker" id="inlineRadio3" value="3" />
+                         <input type="radio" name="marker" id="inlineRadio3" value="3" required>
                         <label class="radio-inline" for="inlineRadio3"><span></span></label>
                     </div>
                     <div>
-                         <input type="radio" name="marker" id="inlineRadio4" value="4" />
+                         <input type="radio" name="marker" id="inlineRadio4" value="4" required>
                         <label class="radio-inline" for="inlineRadio4"><span></span></label>
                     </div>
                     <div>
-                         <input type="radio" name="marker" id="inlineRadio5" value="5" />
+                         <input type="radio" name="marker" id="inlineRadio5" value="5" required>
                         <label class="radio-inline" for="inlineRadio5"><span></span></label>
                     </div>
                     <div>
-                         <input type="radio" name="marker" id="inlineRadio6" value="6" />
+                         <input type="radio" name="marker" id="inlineRadio6" value="6" required >
                          <label class="radio-inline" for="inlineRadio6"><span></span></label>
                     </div>
                 </div>
@@ -72,13 +72,13 @@
                 <div class="form-group d-flex form_a">
                     <label for="name" class="col-sm-6 control-label self-align-center">Ime:</label>
                     <div class="col-sm-6 pr-0">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="" required>
                     </div>
                 </div>
                 <div class="form-group form_a">
                     <label for="location" class="col-sm-6 control-label">Gdje živite?</label>
                     <div class="col-sm-6 pr-0">
-                        <select name="location" id="location" class="form-control">
+                        <select name="location" id="location" class="form-control" required>
                             <option value="1">Grad Zagreb</option>
                             <option value="2">Bjelovarsko-bilogorska županija</option>
                             <option value="3">Brodsko-posavska županija</option>
@@ -105,12 +105,16 @@
                 <div class="form-group form_a">
                     <label for="description" class="col-sm-6 control-label">Što je dobro u Hrvatskoj?</label>
                     <div class="col-sm-6 pr-0">
-                        <textarea id="description" name="description" class="form-control" rows="3" placeholder=""></textarea>
+                        <textarea id="description" name="description" class="form-control" rows="3" placeholder="" required></textarea>
                     </div>
                 </div>
+                <button type="submit" class="btn btn-danger1">Dodaj</button>
             </form>
-            <button type="submit" class="btn btn-danger1" data-toggle="modal" data-target="#myModal">Dodaj</button>
+
         </div>
     </div>
 </div>
+    <script>
+        window.dataset = {!!  json_encode($entries) !!}
+    </script>
 @endsection

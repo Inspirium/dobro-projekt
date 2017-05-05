@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'FormController@showPublic');
 
 Route::post('/', 'FormController@postForm');
 

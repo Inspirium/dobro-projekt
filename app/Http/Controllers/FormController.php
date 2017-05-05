@@ -8,7 +8,12 @@ use Illuminate\Http\Request;
 class FormController extends Controller {
 
 	public function __construct() {
-		$this->middleware('auth')->except('postForm');
+		$this->middleware('auth')->except(['postForm', 'showPublic']);
+	}
+
+	public function showPublic() {
+		$entries = Entry::all();
+		return view('home', compact('entries'));
 	}
 
 	public function showEntries() {
@@ -36,13 +41,12 @@ class FormController extends Controller {
 			'location' => 'required'
 		]);
 
-		$entry = new Entry([
+		$entry = Entry::create([
 			'name' => $request->get('name'),
 			'description' => $request->get('description'),
 			'marker' => $request->get('marker'),
 			'location' => $request->get('location')
 		]);
-
-		return view('home');
+		return redirect('/');
 	}
 }

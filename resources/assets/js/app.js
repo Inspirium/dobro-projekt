@@ -29,7 +29,7 @@ d3.json("js/hrv.json", function(error, uk) {
 
     var lands = topojson.feature(uk, uk.objects.subunits);
     var data = create_dataset(lands);
-//var data = [1,2,3];
+    console.log(data.length);
     svg.selectAll(".locator")
         .data(data)
         .enter()
@@ -50,28 +50,54 @@ d3.json("js/hrv.json", function(error, uk) {
 });
 
 function create_dataset(lands) {
-    var data = [];
+    var data = [], out = [], radius = 5;
+    if (window.dataset.length < 120) {
+        out = [0, 1,  4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, ];
+        radius = 21;
+    }
+    if (window.dataset.length < 60) {
+        out = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,22, 23];
+        radius = 14;
+    }
+
     for (var i0 = 0; i0 < lands.features[0].geometry.coordinates.length; i0++) {
 
+        if (out.indexOf(i0) !==-1) {
+            continue;
+        }
+
+        if (!window.dataset.length) {
+            break;
+        }
         p = lands.features[0].geometry.coordinates[i0];
 
-        feature = {type: "Feature", geometry: {type: "Polygon", coordinates: p}}
+        feature = {type: "Feature", geometry: {type: "Polygon", coordinates: p}};
         var bounds = path.bounds(feature);
-        var sample = poissonDiscSampler(bounds[1][0] - bounds[0][0], bounds[1][1] - bounds[0][1], 6 * 2);
+        var sample = poissonDiscSampler(bounds[1][0] - bounds[0][0], bounds[1][1] - bounds[0][1], radius * 2);
         s = true;
         while (s) {
             var s = sample();
             if (s) {
                 x = bounds[0][0] + s[0];
                 y = bounds[0][1] + s[1];
-                i = Math.floor(Math.random() * 6) + 1;
                 if (pointInPolygon(projection.invert([x, y]), p[0])) {
-                    data.push({x:x, y:y, color: i, name: 'Ime', location: 'Grad', text: 'Poruka'});
+                    var i = randItem(window.dataset);
+                    data.push({x:x, y:y, color: i.marker, name: i.name, location: i.location, text: i.description});
                 }
+            }
+            if (!window.dataset.length) {
+                break;
             }
         }
     }
     return data;
+}
+
+function randItem(arr) {
+    var itemIndex = Math.floor(Math.random() * arr.length);
+    var itemValue = arr[itemIndex];
+    arr.splice(itemIndex,1);
+    return itemValue;
 }
 
 // PNPOLY
@@ -154,3 +180,22 @@ function poissonDiscSampler(width, height, radius) {
         return s;
     }
 }
+
+jQuery('form').submit(function() {
+    if (!jQuery('input[name=marker]:checked').val()) {
+        alert('Morate odabrati pin!');
+        return false;
+    }
+    if (!jQuery('input[name=name]').val()) {
+        alert('Morate unijeti ime!');
+        return false;
+    }
+    if (!jQuery('select[name=location]').val()) {
+        alert('Morate unijeti gdje živite!');
+        return false;
+    }
+    if (!jQuery('textarea[name=description]').val()) {
+        alert('Morate unijeti što je dobro!');
+        return false;
+    }
+});
