@@ -12,7 +12,7 @@ class FormController extends Controller {
 	}
 
 	public function showPublic() {
-		$entries = Entry::all();
+		$entries = Entry::where('approved', 1)->get();
 		return view('home', compact('entries'));
 	}
 

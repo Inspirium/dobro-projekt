@@ -14,6 +14,8 @@ class Entry extends Model {
 
 	protected $fillable = ['name', 'description', 'marker', 'location'];
 
+	protected $hidden = ['created_at', 'approved', 'updated_at', 'deleted_at'];
+
 	public function getLocationAttribute($key) {
 		$locations = ['Grad Zagreb',
                             'Bjelovarsko-bilogorska županija',
