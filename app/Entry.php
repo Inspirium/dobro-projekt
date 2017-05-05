@@ -35,6 +35,6 @@ class Entry extends Model {
                             'Virovitičko-podravska županija',
                             'Zadarska županija',
                             'Zagrebačka županija'];
-		return $locations[$key];
+		return $locations[$key-1];
 	}
 }
