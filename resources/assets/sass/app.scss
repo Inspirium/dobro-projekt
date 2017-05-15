@@ -197,6 +197,16 @@ input[type="radio"]:checked + label span {
     z-index: -1;
 }
 
+.cloud-5 {
+    width: 714px;
+    height: 298px;
+    background-image: url(../images/people_3.svg);
+    position: absolute;
+    top: 263px;
+    left: 410px;;
+    z-index: -1;
+}
+
 .pin_color_ {
     &1 {fill: #305777};
     &2 {fill: #6D5C7D};
@@ -278,7 +288,7 @@ input[type="radio"]:checked + label span {
     text-align: left;
     font-family: 'superclarendonregular';
     color: #aaa;
-    height: 50px;
+    height: 35px;
     font-size: 2rem;
     line-height: 4rem;
 }
@@ -287,8 +297,7 @@ input[type="radio"]:checked + label span {
     text-align: left;
     font-family: 'superclarendonregular';
     color: #aaa;
-    font-size: 3rem;
-    color: #07AEC4;
+    font-size: 2rem;
 }
 
 .modal-content .desc {

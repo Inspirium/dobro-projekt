@@ -97,7 +97,7 @@ d3.json("js/hrv.json", function (error, uk) {
     var lands = topojson.feature(uk, uk.objects.subunits);
     var data = create_dataset(lands);
     console.log(data.length);
-    svg.selectAll("image").data(data).enter().append("image").attr('width', 20).attr('height', 20).attr('class', 'locator').attr('xlink:href', function (d) {
+    svg.selectAll("image").data(data).enter().append("image").attr('width', 20).attr('height', 20).attr('cursor', 'pointer').attr('class', 'locator').attr('xlink:href', function (d) {
         return '/img/col_' + d.color + '.svg';
     }).attr("transform", function (d) {
         return "translate(" + (d.x - 10) + ',' + (d.y - 10) + ")";

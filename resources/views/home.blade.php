@@ -9,8 +9,8 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <div id="modal-name" class="name">Ime i prezime</div>
-        <div id="modal-location" class="city">Zadar</div>
+        <div id="modal-name" class="name">Poslao: Ime i prezime</div>
+        <div id="modal-location" class="city">Živi u: Zadar</div>
       </div>
       <div class="modal-body">
         <div id="modal-loc" class="locator-1"></div>
@@ -20,6 +20,48 @@
         <button type="button" class="btn btn-danger2" data-dismiss="modal">Zatvori</button>
       </div>
     </div>
+
+ <!-- Modal content-->
+    <div class="modal-alert-pin">
+      <div class="modal-body">
+        <div id="modal-text" class="desc">Morate odabrati pin!</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger2" data-dismiss="modal">Zatvori</button>
+      </div>
+    </div>   
+     
+    <!-- Modal content-->
+    <div class="modal-alert-name">
+      <div class="modal-body">
+        <div id="modal-text" class="desc">Morate unijeti ime</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger2" data-dismiss="modal">Zatvori</button>
+      </div>
+    </div>   
+     
+    <!-- Modal content-->
+    <div class="modal-alert-location">
+      <div class="modal-body">
+        <div id="modal-text" class="desc">Morate unijeti gdje živite!</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger2" data-dismiss="modal">Zatvori</button>
+      </div>
+    </div>   
+     
+    <!-- Modal content-->
+    <div class="modal-alert-desc">
+      <div class="modal-body">
+        <div id="modal-text" class="desc">Morate unijeti što je dobro!</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger2" data-dismiss="modal">Zatvori</button>
+      </div>
+    </div>
+
+  
 
   </div>
 </div>

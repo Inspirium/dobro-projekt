@@ -40,6 +40,7 @@ d3.json("js/hrv.json", function(error, uk) {
         .append("image")
         .attr('width', 20)
         .attr('height', 20)
+        .attr('cursor', 'pointer')
         .attr('class', 'locator')
         .attr('xlink:href', function(d) { return '/img/col_'+d.color+'.svg' })
         .attr("transform", function(d) {
