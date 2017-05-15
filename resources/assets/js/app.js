@@ -51,7 +51,7 @@ d3.json("js/hrv.json", function(error, uk) {
             jQuery('#modal-name').text(d.name);
             jQuery('#modal-location').text(d.location);
             jQuery('#modal-text').text(d.text);
-            jQuery('#myModal').modal('show');
+            jQuery('#pin-modal').modal('show');
         });
 });
 
@@ -189,19 +189,23 @@ function poissonDiscSampler(width, height, radius) {
 
 jQuery('form').submit(function() {
     if (!jQuery('input[name=marker]:checked').val()) {
-        alert('Morate odabrati pin!');
+        jQuery('#alert-text').text('Morate odabrati pin!');
+        jQuery('#alert-modal').modal('show');
         return false;
     }
     if (!jQuery('input[name=name]').val()) {
-        alert('Morate unijeti ime!');
+        jQuery('#alert-text').text('Morate unijeti ime!');
+        jQuery('#alert-modal').modal('show');
         return false;
     }
     if (!jQuery('select[name=location]').val()) {
-        alert('Morate unijeti gdje živite!');
+        jQuery('#alert-text').text('Morate unijeti gdje živite!');
+        jQuery('#alert-modal').modal('show');
         return false;
     }
     if (!jQuery('textarea[name=description]').val()) {
-        alert('Morate unijeti što je dobro!');
+        jQuery('#alert-text').text('Morate unijeti što je dobro!');
+        jQuery('#alert-modal').modal('show');
         return false;
     }
 });
