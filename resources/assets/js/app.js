@@ -1,6 +1,6 @@
 var d3 = require('d3');
 var topojson = require('topojson');
-
+var form_submitted = false;
 var width = 783,
     height = 580;
 var scale = 5500, center = 17.2;
@@ -33,7 +33,7 @@ d3.json("js/hrv.json", function(error, uk) {
 
     var lands = topojson.feature(uk, uk.objects.subunits);
     var data = create_dataset(lands);
-    console.log(data.length);
+
     svg.selectAll("image")
         .data(data)
         .enter()
@@ -187,7 +187,7 @@ function poissonDiscSampler(width, height, radius) {
     }
 }
 
-jQuery('form').submit(function() {
+jQuery('form').submit(function(e) {
     if (!jQuery('input[name=marker]:checked').val()) {
         jQuery('#alert-text').text('Morate odabrati pin!');
         jQuery('#alert-modal').modal('show');
@@ -208,4 +208,18 @@ jQuery('form').submit(function() {
         jQuery('#alert-modal').modal('show');
         return false;
     }
+    if (!form_submitted) {
+        form_submitted = true;
+        jQuery('#alert-text').text('Vaša poruka će biti prikazana nakon autorizacije.');
+        jQuery('#alert-modal').modal('show');
+        return false;
+    }
 });
+
+$('#alert-modal').on('hidden.bs.modal', function (e) {
+    if (form_submitted) {
+        jQuery('form').submit();
+    }
+});
+
+
