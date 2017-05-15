@@ -47,6 +47,7 @@ class FormController extends Controller {
 			'marker' => $request->get('marker'),
 			'location' => $request->get('location')
 		]);
-		return redirect('/');
+		$entries = Entry::where('approved', 1)->get();
+		return view('sent', compact('entries'));
 	}
 }

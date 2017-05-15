@@ -2,25 +2,26 @@
 
 @section('content')
 <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+<div id="pin-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <div id="modal-name" class="name">Poslao: Ime i prezime</div>
-        <div id="modal-location" class="city">Živi u: Zadar</div>
-      </div>
-      <div class="modal-body">
-        <div id="modal-loc" class="locator-1"></div>
-        <div id="modal-text" class="desc">U Zadru je najljepši zalazak sunca na svijetu</div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger2" data-dismiss="modal">Zatvori</button>
-      </div>
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="name">Poslao: <span id="modal-name">Ime i prezime</span></div>
+                <div class="city">Živi u: <span id="modal-location">Zadar</span></div>
+            </div>
+            <div class="modal-body">
+                <div id="modal-loc" class="locator-1"></div>
+                <div id="modal-text" class="desc">U Zadru je najljepši zalazak sunca na svijetu</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger2" data-dismiss="modal">Zatvori</button>
+            </div>
+        </div>
+
     </div>
-  </div>
 </div>
 
 
@@ -33,7 +34,7 @@
             <div class="cloud-4"></div>
             <div class="cloud-5"></div>
             <div class="col col-md-4 total">
-                <h1 class="big_title"><span class="big_text">Broj dobroga</span> 11234</h1>
+                <h1 class="big_title"><span class="big_text">Broj dobroga</span> {{ count($entries) }}</h1>
             </div>
         </div>
         <div class="col-xs-12 col-md-4 ml-auto">
@@ -67,7 +68,7 @@
                          <input type="radio" name="marker" id="inlineRadio6" value="6" required >
                          <label class="radio-inline" for="inlineRadio6"><span></span></label>
                     </div>
-                </div>    
+                </div>
             </form>
 
         </div>
