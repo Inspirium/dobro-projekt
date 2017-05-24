@@ -4,16 +4,16 @@ var form_submitted = false;
 var width = 783,
     height = 580;
 var scale = 5300, center = 17.2;
+var centered = false;
 if (window.innerWidth < 600) {
     scale = 3000;
     center = 20;
 }
+
+
 var svg = d3.select("#map").append("svg")
     .attr("width", "100%")
     .attr("height", height)
-    .call(d3.zoom().on("zoom", function () {
-        svg.attr("transform", d3.event.transform)
-    }))
     .append("g");
 
 var projection = d3.geoMercator()
@@ -29,7 +29,25 @@ d3.json("js/hrv.json", function(error, uk) {
         .datum(topojson.feature(uk, uk.objects.subunits))
         .attr("class", "hrvatska")
         .attr("d", path)
-        .on('click', function(d) {console.log(path.bounds(d))});
+        .on('dblclick', function(d) {
+            var x, y, k;
+
+            if (d && centered !== d) {
+                var centroid = d3.mouse(this);
+                x = centroid[0];
+                y = centroid[1];
+                k = 3;
+                centered = d;
+            } else {
+                x = width / 2;
+                y = height / 2;
+                k = 1;
+                centered = null;
+            }
+            svg.transition()
+                .duration(750)
+                .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")");
+        });
 
     var lands = topojson.feature(uk, uk.objects.subunits);
     var data = create_dataset(lands);
