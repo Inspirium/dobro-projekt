@@ -3,7 +3,7 @@ var topojson = require('topojson');
 var form_submitted = false;
 var width = 783,
     height = 580;
-var scale = 5500, center = 17.2;
+var scale = 5300, center = 17.2;
 if (window.innerWidth < 600) {
     scale = 3000;
     center = 20;
@@ -17,7 +17,7 @@ var svg = d3.select("#map").append("svg")
     .append("g");
 
 var projection = d3.geoMercator()
-    .center([center, 44.4])
+    .center([center, 44.5])
     .scale(scale)
     .translate([width / 2, height / 2]);
 var path = d3.geoPath()
