@@ -77,7 +77,9 @@ var width = 783,
     height = 580;
 var scale = 5300,
     center = 17.2;
-var centered = false;
+var centered = false,
+    clickedOnce = false,
+    timer = false;
 if (window.innerWidth < 600) {
     scale = 3000;
     center = 20;
@@ -90,23 +92,7 @@ var path = d3.geoPath().projection(projection);
 
 d3.json("js/hrv.json", function (error, uk) {
     if (error) return console.error(error);
-    svg.append("path").datum(topojson.feature(uk, uk.objects.subunits)).attr("class", "hrvatska").attr("d", path).on('dblclick', function (d) {
-        var x, y, k;
-
-        if (d && centered !== d) {
-            var centroid = d3.mouse(this);
-            x = centroid[0];
-            y = centroid[1];
-            k = 3;
-            centered = d;
-        } else {
-            x = width / 2;
-            y = height / 2;
-            k = 1;
-            centered = null;
-        }
-        svg.transition().duration(750).attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")");
-    });
+    svg.append("path").datum(topojson.feature(uk, uk.objects.subunits)).attr("class", "hrvatska").attr("d", path).on('dblclick', dbl);
 
     var lands = topojson.feature(uk, uk.objects.subunits);
     var data = create_dataset(lands);
@@ -116,13 +102,50 @@ d3.json("js/hrv.json", function (error, uk) {
     }).attr("transform", function (d) {
         return "translate(" + (d.x - 10) + ',' + (d.y - 10) + ")";
     }).on('click', function (d) {
-        jQuery('#modal-loc').removeClass().addClass('locator-' + d.color);
-        jQuery('#modal-name').text(d.name);
-        jQuery('#modal-location').text(d.location);
-        jQuery('#modal-text').text(d.text);
-        jQuery('#pin-modal').modal('show');
+        if (clickedOnce) {
+            dbl(d, true);
+        } else {
+            timer = setTimeout(function () {
+                snl(d);
+            }, 300);
+            clickedOnce = true;
+        }
     });
 });
+
+function snl(d) {
+    jQuery('#modal-loc').removeClass().addClass('locator-' + d.color);
+    jQuery('#modal-name').text(d.name);
+    jQuery('#modal-location').text(d.location);
+    jQuery('#modal-text').text(d.text);
+    jQuery('#pin-modal').modal('show');
+    clickedOnce = false;
+}
+
+function dbl(d, that) {
+    clickedOnce = false;
+    clearTimeout(timer);
+    var centroid;
+    var x, y, k;
+    if (!centered) {
+        if (that) {
+            centroid = [d.x, d.y];
+        } else {
+            centroid = d3.mouse(this);
+        }
+        console.log(centroid);
+        x = centroid[0];
+        y = centroid[1];
+        k = 3;
+        centered = true;
+    } else {
+        x = width / 2;
+        y = height / 2;
+        k = 1;
+        centered = false;
+    }
+    svg.transition().duration(750).attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")");
+}
 
 function create_dataset(lands) {
     var data = [],
