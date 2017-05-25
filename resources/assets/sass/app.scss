@@ -138,9 +138,14 @@ input[type="radio"]:checked + label span {
         padding-left: 0;
     }
         
-    .cloud-4 {
+    .cloud-5,
+    .cloud-4,
+    .cloud-3,
+    .cloud-2,
+    .cloud-1 {
         display: none;
-    }   
+    }    
+
 }
 
 .middle {
