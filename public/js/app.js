@@ -82,7 +82,7 @@ var centered = false,
     timer = false;
 if (window.innerWidth < 600) {
     scale = 3000;
-    center = 20;
+    center = 21;
 }
 
 var svg = d3.select("#map").append("svg").attr("width", "100%").attr("height", height).append("g");
