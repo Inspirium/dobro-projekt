@@ -42,6 +42,7 @@
             <h1 class="title">Napiši što je <span class="blue_text">dobro</span> u Hrvatskoj i dodaj svoj pin</h1>
             <form class="form-horizontal" method="post">
                 {{ csrf_field() }}
+<!--
                 <div class="form-group d-flex1">
 
                     <div>
@@ -69,6 +70,7 @@
                          <label class="radio-inline" for="inlineRadio6"><span></span></label>
                     </div>
                 </div>
+-->
             </form>
 
         </div>
