@@ -47,37 +47,37 @@
 }
 
 .locator {
-    width: 29px;
-    height: 43px;
+    width: 38px;
+    height: 49px;
     display: inline-block;
-    margin-right: 5px;
+    margin-right: 0px;
     margin-top: 10px;
     padding-left: 0px;
 }
 
 .locator-1 {
     @extend .locator; 
-    background-image: url(../images/col_1.svg);
+    background-image: url(../images/col_1.png);
 }    
 .locator-2 {
     @extend .locator; 
-    background-image: url(../images/col_2.svg); 
+    background-image: url(../images/col_2.png); 
 }    
 .locator-3 {
     @extend .locator; 
-    background-image: url(../images/col_3.svg);
+    background-image: url(../images/col_3.png);
 }    
 .locator-4 {
     @extend .locator; 
-    background-image: url(../images/col_4.svg);
+    background-image: url(../images/col_4.png);
 }    
 .locator-5 {
     @extend .locator; 
-    background-image: url(../images/col_5.svg);
+    background-image: url(../images/col_5.png);
 }    
 .locator-6 {
     @extend .locator; 
-    background-image: url(../images/col_6.svg);
+    background-image: url(../images/col_6.png);
 }
     
 ////////// Radio style
