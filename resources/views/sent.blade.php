@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="col-xs-12 col-md-4 ml-auto">
-            <h2 class="overtitle">Omogućuje dobro</h2>
+            <h2 class="overtitle">Omogućuje <img style="width:90px;display:inline-block;margin-left:5px;position:relative;top:2px;"  src="../img/logo.png"></h2>
             <h1 class="title">Napiši što je <span class="blue_text">dobro</span> u Hrvatskoj i dodaj svoj pin</h1>
             <form class="form-horizontal" method="post">
                 {{ csrf_field() }}
