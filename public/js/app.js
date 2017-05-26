@@ -93,7 +93,7 @@ var path = d3.geoPath().projection(projection);
 d3.json("js/hrv.json", function (error, uk) {
     if (error) return console.error(error);
     svg.append("path").datum(topojson.feature(uk, uk.objects.subunits)).attr("class", "hrvatska").attr("d", path).on('dblclick', dbl);
-    jQuery.get('http://dobro.dev/api/entries', function (response) {
+    jQuery.get('http://dobro.inspirium.hr/api/entries', function (response) {
         window.dataset = response;
         jQuery('#count_good').text(response.length);
 

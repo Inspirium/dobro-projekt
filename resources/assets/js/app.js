@@ -30,7 +30,7 @@ d3.json("js/hrv.json", function(error, uk) {
         .attr("class", "hrvatska")
         .attr("d", path)
         .on('dblclick', dbl);
-    jQuery.get('http://dobro.dev/api/entries', function (response) {
+    jQuery.get('http://dobro.inspirium.hr/api/entries', function (response) {
         window.dataset = response;
         jQuery('#count_good').text(response.length);
 
