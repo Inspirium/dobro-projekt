@@ -30,6 +30,9 @@ d3.json("js/hrv.json", function(error, uk) {
         .attr("class", "hrvatska")
         .attr("d", path)
         .on('dblclick', dbl);
+    jQuery.get('http://dobro.dev/api/entries', function (response) {
+        window.dataset = response;
+        jQuery('#count_good').text(response.length);
 
     var lands = topojson.feature(uk, uk.objects.subunits);
     var data = create_dataset(lands);
@@ -56,6 +59,7 @@ d3.json("js/hrv.json", function(error, uk) {
                 clickedOnce = true;
             }
         });
+    });
 });
 
 function snl(d) {
@@ -79,7 +83,6 @@ function dbl(d, that) {
         else {
             centroid = d3.mouse(this);
         }
-        console.log(centroid);
         x = centroid[0];
         y = centroid[1];
         k = 3;
@@ -258,7 +261,14 @@ jQuery('form').submit(function(e) {
 
 $('#alert-modal').on('hidden.bs.modal', function (e) {
     if (form_submitted) {
-        jQuery('form').submit();
+        //jQuery('form').submit();
+        var data = {
+            marker: jQuery('input[name=marker]:checked').val(),
+            name: jQuery('input[name=name]').val(),
+            location: jQuery('select[name=location]').val(),
+            description: jQuery('textarea[name=description]').val()
+        };
+        jQuery.post('http://dobro.inspirium.hr', data, function() {});
     }
 });
 

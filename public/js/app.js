@@ -93,23 +93,27 @@ var path = d3.geoPath().projection(projection);
 d3.json("js/hrv.json", function (error, uk) {
     if (error) return console.error(error);
     svg.append("path").datum(topojson.feature(uk, uk.objects.subunits)).attr("class", "hrvatska").attr("d", path).on('dblclick', dbl);
+    jQuery.get('http://dobro.dev/api/entries', function (response) {
+        window.dataset = response;
+        jQuery('#count_good').text(response.length);
 
-    var lands = topojson.feature(uk, uk.objects.subunits);
-    var data = create_dataset(lands);
+        var lands = topojson.feature(uk, uk.objects.subunits);
+        var data = create_dataset(lands);
 
-    svg.selectAll("image").data(data).enter().append("image").attr('width', 20).attr('height', 20).attr('cursor', 'pointer').attr('class', 'locator').attr('xlink:href', function (d) {
-        return '/img/col_' + d.color + '.svg';
-    }).attr("transform", function (d) {
-        return "translate(" + (d.x - 10) + ',' + (d.y - 10) + ")";
-    }).on('click', function (d) {
-        if (clickedOnce) {
-            dbl(d, true);
-        } else {
-            timer = setTimeout(function () {
-                snl(d);
-            }, 300);
-            clickedOnce = true;
-        }
+        svg.selectAll("image").data(data).enter().append("image").attr('width', 20).attr('height', 20).attr('cursor', 'pointer').attr('class', 'locator').attr('xlink:href', function (d) {
+            return '/img/col_' + d.color + '.svg';
+        }).attr("transform", function (d) {
+            return "translate(" + (d.x - 10) + ',' + (d.y - 10) + ")";
+        }).on('click', function (d) {
+            if (clickedOnce) {
+                dbl(d, true);
+            } else {
+                timer = setTimeout(function () {
+                    snl(d);
+                }, 300);
+                clickedOnce = true;
+            }
+        });
     });
 });
 
@@ -133,7 +137,6 @@ function dbl(d, that) {
         } else {
             centroid = d3.mouse(this);
         }
-        console.log(centroid);
         x = centroid[0];
         y = centroid[1];
         k = 3;
@@ -315,7 +318,14 @@ jQuery('form').submit(function (e) {
 
 $('#alert-modal').on('hidden.bs.modal', function (e) {
     if (form_submitted) {
-        jQuery('form').submit();
+        //jQuery('form').submit();
+        var data = {
+            marker: jQuery('input[name=marker]:checked').val(),
+            name: jQuery('input[name=name]').val(),
+            location: jQuery('select[name=location]').val(),
+            description: jQuery('textarea[name=description]').val()
+        };
+        jQuery.post('http://dobro.inspirium.hr', data, function () {});
     }
 });
 

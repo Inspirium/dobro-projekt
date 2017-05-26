@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class FormController extends Controller {
 
 	public function __construct() {
-		$this->middleware('auth')->except(['postForm', 'showPublic']);
+		$this->middleware('auth')->except(['postForm', 'showPublic', 'getEntries']);
 	}
 
 	public function showPublic() {
@@ -19,6 +19,11 @@ class FormController extends Controller {
 	public function showEntries() {
 		$entries = Entry::all(); //TODO: pagination
 		return view('entries', compact('entries'));
+	}
+
+	public function getEntries() {
+		$entries = Entry::all(); //TODO: pagination
+		return response()->json($entries);
 	}
 
 	public function approveEntry($id) {
