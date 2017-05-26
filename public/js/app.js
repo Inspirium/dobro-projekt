@@ -287,7 +287,7 @@ function poissonDiscSampler(width, height, radius) {
     }
 }
 
-jQuery('form').submit(function (e) {
+jQuery('#form').submit(function (e) {
     if (!jQuery('input[name=marker]:checked').val()) {
         jQuery('#alert-text').text('Morate odabrati pin!');
         jQuery('#alert-modal').modal('show');
@@ -326,7 +326,7 @@ $('#alert-modal').on('hidden.bs.modal', function (e) {
             description: jQuery('textarea[name=description]').val()
         };
         jQuery.post('http://dobro.inspirium.hr', data, function () {
-            jQuery('form').hide();
+            jQuery('#form').hide();
             jQuery('.cloud-5').show();
         });
     }
