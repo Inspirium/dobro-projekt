@@ -9,6 +9,7 @@ class FormController extends Controller {
 
 	public function __construct() {
 		$this->middleware('auth')->except(['postForm', 'showPublic', 'getEntries']);
+		$this->middleware('cors')->only(['postForm', 'getEntries']);
 	}
 
 	public function showPublic() {
