@@ -268,7 +268,10 @@ $('#alert-modal').on('hidden.bs.modal', function (e) {
             location: jQuery('select[name=location]').val(),
             description: jQuery('textarea[name=description]').val()
         };
-        jQuery.post('http://dobro.inspirium.hr', data, function() {});
+        jQuery.post('http://dobro.inspirium.hr', data, function() {
+            jQuery('form').hide();
+            jQuery('.cloud-5').show();
+        });
     }
 });
 
