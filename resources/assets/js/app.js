@@ -45,7 +45,7 @@ d3.json("js/hrv.json", function(error, uk) {
         .attr('height', 20)
         .attr('cursor', 'pointer')
         .attr('class', 'locator')
-        .attr('xlink:href', function(d) { return '/img/col_'+d.color+'.svg' })
+        .attr('xlink:href', function(d) { return 'img/col_'+d.color+'.svg' })
         .attr("transform", function(d) {
             return "translate(" + (d.x-10) +',' + (d.y-10) + ")";
         })
