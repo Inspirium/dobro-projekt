@@ -18,7 +18,7 @@ class FormController extends Controller {
 	}
 
 	public function showEntries() {
-		$entries = Entry::all(); //TODO: pagination
+		$entries = Entry::orderBy('id', 'dsc')->get(); //TODO: pagination
 		return view('entries', compact('entries'));
 	}
 

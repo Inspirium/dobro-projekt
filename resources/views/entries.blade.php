@@ -24,7 +24,9 @@
                     <td>{{ $entry['marker'] }}</td>
                     <td>{{ $entry['created_at'] }}</td>
                     <td>
+                        @if(!$entry['approved'])
                         <a href="{{ url('/admin/approve/'.$entry['id']) }}" class="btn btn-primary">Odobri</a>
+                        @endif
                         <a href="{{ url('/admin/delete/'.$entry['id']) }}" class="btn btn-danger">Obriši</a>
                     </td>
                 </tr>
