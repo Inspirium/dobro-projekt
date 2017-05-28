@@ -109,7 +109,7 @@ function create_dataset(lands) {
         radius = 14;
     }
     if (window.innerWidth < 600) {
-        radius = 5;
+        radius = radius/2;
     }
 
     for (var i0 = 0; i0 < lands.features[0].geometry.coordinates.length; i0++) {
