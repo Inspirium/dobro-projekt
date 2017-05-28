@@ -103,7 +103,7 @@ d3.json("js/hrv.json", function (error, uk) {
         svg.selectAll("image").data(data).enter().append("image").attr('width', 20).attr('height', 20).attr('cursor', 'pointer').attr('class', 'locator').attr('xlink:href', function (d) {
             return 'img/col_' + d.color + '.svg';
         }).attr("transform", function (d) {
-            return "translate(" + (d.x - 10) + ',' + (d.y - 10) + ")";
+            return "translate(" + (d.x - 10) + ',' + (d.y - 20) + ")";
         }).on('click', function (d) {
             if (clickedOnce) {
                 dbl(d, true);
@@ -161,6 +161,9 @@ function create_dataset(lands) {
     if (window.dataset.length < 60) {
         out = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23];
         radius = 14;
+    }
+    if (window.innerWidth < 600) {
+        radius = 5;
     }
 
     for (var i0 = 0; i0 < lands.features[0].geometry.coordinates.length; i0++) {
