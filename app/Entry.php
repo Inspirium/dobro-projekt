@@ -12,7 +12,7 @@ class Entry extends Model {
 
 	protected $dates = ['deleted_at'];
 
-	protected $fillable = ['name', 'description', 'marker', 'location'];
+	protected $fillable = ['name', 'description', 'marker', 'location', 'approved'];
 
 	protected $hidden = ['created_at', 'approved', 'updated_at', 'deleted_at'];
 

@@ -35,7 +35,7 @@ class FormController extends Controller {
 	}
 
 	public function approveEntry($id) {
-		$entry = Entry::firstOrFail($id);
+		$entry = Entry::find($id);
 		$entry->approved = 1;
 		$entry->save();
 		return redirect('admin');
