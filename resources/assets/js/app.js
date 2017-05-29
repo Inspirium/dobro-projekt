@@ -6,8 +6,8 @@ var width = 783,
 var scale = 5250, center = 17.2, center2 = 44.55;
 var centered = false, clickedOnce = false, timer = false;
 if (window.innerWidth < 600) {
-    scale = 3000;
-    center = 21;
+    scale = 3100;
+    center = 21.2;
     center2 = 43.6;
     height = 500;
 }
