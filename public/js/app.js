@@ -100,10 +100,10 @@ d3.json("js/hrv.json", function (error, uk) {
         var lands = topojson.feature(uk, uk.objects.subunits);
         var data = create_dataset(lands);
 
-        svg.selectAll("image").data(data).enter().append("image").attr('width', 20).attr('height', 20).attr('cursor', 'pointer').attr('class', 'locator').attr('xlink:href', function (d) {
+        svg.selectAll("image").data(data).enter().append("image").attr('width', 38).attr('height', 49).attr('cursor', 'pointer').attr('class', 'locator').attr('xlink:href', function (d) {
             return 'img/col_' + d.color + '.svg';
         }).attr("transform", function (d) {
-            return "translate(" + (d.x - 10) + ',' + (d.y - 20) + ")";
+            return "translate(" + (d.x - 19) + ',' + (d.y - 49) + ")";
         }).on('click', function (d) {
             if (clickedOnce) {
                 dbl(d, true);
