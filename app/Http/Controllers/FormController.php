@@ -28,7 +28,7 @@ class FormController extends Controller {
 	public function getEntries() {
 	$entries = Cache::get('entries');
 	if (!$entries) {
-		$entries = Entry::all(); //TODO: pagination
+		$entries = Entry::where('approved', 1)->get(); //TODO: pagination
 		Cache::put('entries', $entries, 5);
 	}
 		return response()->json($entries);
