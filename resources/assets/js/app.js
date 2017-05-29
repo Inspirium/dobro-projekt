@@ -104,7 +104,7 @@ function create_dataset(lands) {
     var data = [], out = [], radius = 5;
     if (window.dataset.length < 120) {
         out = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,22,23];
-        radius = 16;
+        radius = 12;
     }
     if (window.innerWidth < 600) {
         radius = radius/2;
