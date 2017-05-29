@@ -34,7 +34,7 @@
             <div class="cloud-4"></div>
             <div class="cloud-5"></div>
             <div class="col col-md-4 total">
-                <h1 class="big_title"><span class="big_text">Broj dobroga</span> {{ count($entries) }}</h1>
+                <h1 class="big_title"><span class="big_text">Broj dobroga<br> (klikni na pinove i istraži)</span> {{ count($entries) }}</h1>
             </div>
         </div>
         <div class="col-xs-12 col-md-4 ml-auto">
