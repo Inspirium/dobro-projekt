@@ -83,7 +83,7 @@ var centered = false,
     timer = false;
 if (window.innerWidth < 600) {
     scale = 3100;
-    center = 21.2;
+    center = 20.2;
     center2 = 43.6;
     height = 500;
 }
@@ -159,7 +159,7 @@ function create_dataset(lands) {
         radius = 5;
     if (window.dataset.length < 120) {
         out = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23];
-        radius = 10;
+        radius = 14;
     }
     if (window.innerWidth < 600) {
         radius = radius / 2;
