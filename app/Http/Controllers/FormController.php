@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Entry;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class FormController extends Controller {
 
@@ -18,12 +19,18 @@ class FormController extends Controller {
 	}
 
 	public function showEntries() {
-		$entries = Entry::orderBy('id', 'dsc')->get(); //TODO: pagination
+
+			$entries = Entry::orderBy( 'id', 'dsc' )->get(); //TODO: pagination
+
 		return view('entries', compact('entries'));
 	}
 
 	public function getEntries() {
+	$entries = Cache::get('entries');
+	if (!$entries) {
 		$entries = Entry::all(); //TODO: pagination
+		Cache::put('entries', $entries, 5);
+	}
 		return response()->json($entries);
 	}
 
