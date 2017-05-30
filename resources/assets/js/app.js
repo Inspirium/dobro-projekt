@@ -101,11 +101,7 @@ function dbl(d, that) {
 }
 
 function create_dataset(lands) {
-    var data = [], out = [], radius = 5;
-    if (window.dataset.length < 120) {
-        out = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,22,23];
-        radius = 12;
-    }
+    var data = [], out = [], radius = 10;
     if (window.innerWidth < 600) {
         radius = radius/2;
     }
@@ -125,6 +121,7 @@ function create_dataset(lands) {
         var bounds = path.bounds(feature);
         var sample = poissonDiscSampler(bounds[1][0] - bounds[0][0], bounds[1][1] - bounds[0][1], radius * 2);
         s = true;
+        var k = 0;
         while (s) {
             var s = sample();
             if (s) {
@@ -133,6 +130,7 @@ function create_dataset(lands) {
                 if (pointInPolygon(projection.invert([x, y]), p[0])) {
                     var i = randItem(window.dataset);
                     data.push({x:x, y:y, color: i.marker, name: i.name, location: i.location, text: i.description});
+                    k++;
                 }
             }
             if (!window.dataset.length) {
@@ -140,6 +138,7 @@ function create_dataset(lands) {
             }
         }
     }
+    console.log(k);
     return data;
 }
 
