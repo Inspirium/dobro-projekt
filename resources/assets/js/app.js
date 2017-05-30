@@ -101,7 +101,7 @@ function dbl(d, that) {
 }
 
 function create_dataset(lands) {
-    var data = [], out = [], radius = 10;
+    var data = [], out = [], radius = 8;
     if (window.innerWidth < 600) {
         radius = radius/2;
     }
