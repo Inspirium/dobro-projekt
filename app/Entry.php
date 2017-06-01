@@ -36,7 +36,8 @@ class Entry extends Model {
                             'Varaždinska županija',
                             'Virovitičko-podravska županija',
                             'Zadarska županija',
-                            'Zagrebačka županija'];
+                            'Zagrebačka županija',
+							'Vukovarsko-srijemska županija'];
 		return $locations[$key-1];
 	}
 }
