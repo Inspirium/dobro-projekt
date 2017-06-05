@@ -77,7 +77,7 @@ function dbl(d, that) {
     clickedOnce = false;
     clearTimeout(timer);
     var centroid;
-    var x, y, k;
+    var x, y, k, z;
     if (!centered) {
         if (that) {
             centroid = [d.x, d.y];
@@ -88,30 +88,33 @@ function dbl(d, that) {
         x = centroid[0];
         y = centroid[1];
         k = 3;
+        z = 2;
         centered = true;
     } else {
         x = width / 2;
         y = height / 2;
         k = 1;
+        z = 1;
         centered = false;
     }
     svg.transition()
         .duration(750)
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")");
+    svg.selectAll(".locator")
+        .attr('width', 38/z)
+        .attr('height', 49/z)
+        .attr("transform", function(d) {
+            return "translate(" + (d.x-(19/z)) +',' + (d.y-(49/z)) + ")";
+        })
 }
 
 function create_dataset(lands) {
-    var data = [], out = [], radius = 4;
+    var data = [], out = [], radius = 6;
     if (window.innerWidth < 600) {
         radius = radius/2;
     }
 
     for (var i0 = 0; i0 < lands.features[0].geometry.coordinates.length; i0++) {
-
-        if (out.indexOf(i0) !==-1) {
-            continue;
-        }
-
         if (!window.dataset.length) {
             break;
         }
