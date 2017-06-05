@@ -133,7 +133,7 @@ function dbl(d, that) {
     clickedOnce = false;
     clearTimeout(timer);
     var centroid;
-    var x, y, k, z;
+    var x, y, k, z, klasa;
     if (!centered) {
         if (that) {
             centroid = [d.x, d.y];
@@ -144,18 +144,20 @@ function dbl(d, that) {
         y = centroid[1];
         k = 3;
         z = 2;
+        klasa = 'locator locator-small';
         centered = true;
     } else {
         x = width / 2;
         y = height / 2;
         k = 1;
         z = 1;
+        klasa = 'locator';
         centered = false;
     }
     svg.transition().duration(750).attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")");
     svg.selectAll(".locator").attr('width', 38 / z).attr('height', 49 / z).attr("transform", function (d) {
         return "translate(" + (d.x - 19 / z) + ',' + (d.y - 49 / z) + ")";
-    });
+    }).attr('class', 'locator locator-small');
 }
 
 function create_dataset(lands) {

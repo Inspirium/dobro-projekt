@@ -56,31 +56,36 @@
     padding-left: 0px;
 }
 
+.locator-small {
+  width: 19px;
+  height: 25px;
+}
+
 .locator-1 {
-    @extend .locator; 
+    @extend .locator;
     background-image: url(../images/col_1.png);
-}    
+}
 .locator-2 {
-    @extend .locator; 
-    background-image: url(../images/col_2.png); 
-}    
+    @extend .locator;
+    background-image: url(../images/col_2.png);
+}
 .locator-3 {
-    @extend .locator; 
+    @extend .locator;
     background-image: url(../images/col_3.png);
-}    
+}
 .locator-4 {
-    @extend .locator; 
+    @extend .locator;
     background-image: url(../images/col_4.png);
-}    
+}
 .locator-5 {
-    @extend .locator; 
+    @extend .locator;
     background-image: url(../images/col_5.png);
-}    
+}
 .locator-6 {
-    @extend .locator; 
+    @extend .locator;
     background-image: url(../images/col_6.png);
 }
-    
+
 ////////// Radio style
 
 input[type="radio"] {
@@ -126,26 +131,26 @@ input[type="radio"]:checked + label span {
 }
 
 @media screen and (max-width: 920px) {
-    
+
     .d-flex2 {
         flex-direction: column;
     }
-    
+
     .order {
         order: 3;
     }
-    
+
     .pr-0 {
         padding-left: 0;
     }
-        
+
     .cloud-5,
     .cloud-4,
     .cloud-3,
     .cloud-2,
     .cloud-1 {
         display: none;
-    }    
+    }
 
 }
 
@@ -240,7 +245,7 @@ input[type="radio"]:checked + label span {
     border: none;
     color: #333;
     height: 50px;
-} 
+}
 
 .pr-0 {
     padding-right: 0;
