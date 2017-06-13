@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Cache;
 class FormController extends Controller {
 
 	public function __construct() {
-		$this->middleware('auth')->except(['postForm', 'showPublic', 'getEntries']);
+		$this->middleware('auth')->except(['postForm', 'showPublic', 'getEntries', 'ajaxApprove', 'ajaxDelete']);
 		$this->middleware('cors')->only(['postForm', 'getEntries']);
 	}
 
@@ -20,7 +20,7 @@ class FormController extends Controller {
 
 	public function showEntries() {
 
-			$entries = Entry::orderBy( 'id', 'dsc' )->get(); //TODO: pagination
+			$entries = Entry::orderBy( 'id', 'dsc' )->where('approved', 0)->get(); //TODO: pagination
 
 		return view('entries', compact('entries'));
 	}
@@ -44,6 +44,18 @@ class FormController extends Controller {
 	public function deleteEntry($id) {
 		Entry::destroy($id);
 		return redirect('admin');
+	}
+
+	public function ajaxDelete($id) {
+		Entry::destroy($id);
+		return response()->json([]);
+	}
+
+	public function ajaxApprove($id) {
+		$entry = Entry::find($id);
+		$entry->approved = 1;
+		$entry->save();
+		return response()->json([]);
 	}
 
 	public function postForm(Request $request) {

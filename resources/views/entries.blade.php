@@ -25,13 +25,29 @@
                     <td>{{ $entry['created_at'] }}</td>
                     <td>
                         @if(!$entry['approved'])
-                        <a href="{{ url('/admin/approve/'.$entry['id']) }}" class="btn btn-primary">Odobri</a>
+                        <a href="{{ url('/admin/approve/'.$entry['id']) }}" onclick="approveEntry(event, {{ $entry['id']  }})" class="btn btn-primary">Odobri</a>
                         @endif
-                        <a href="{{ url('/admin/delete/'.$entry['id']) }}" class="btn btn-danger">Obriši</a>
+                        <a href="{{ url('/admin/delete/'.$entry['id']) }}" onclick="deleteEntry(event, {{ $entry['id'] }})" class="btn btn-danger">Obriši</a>
                     </td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
+        <script>
+            function approveEntry(e, id) {
+                e.preventDefault();
+                jQuery.post('http://dobro.dev/admin/approve/'+id, {}, function() {
+                    jQuery(e.target).remove();
+                });
+                return false;
+            }
+            function deleteEntry(e, id){
+                e.preventDefault();
+                jQuery.post('http://dobro.dev/admin/delete/'+id, {}, function() {
+                    jQuery(e.target).parent().parent().remove();
+                });
+                return false;
+            }
+        </script>
     </div>
 @endsection

@@ -22,6 +22,8 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 Route::group(['prefix' => 'admin'], function() {
 	Route::get('/', 'FormController@showEntries');
 	Route::get('approve/{id}', 'FormController@approveEntry');
+	Route::post('approve/{id}', 'FormController@ajaxApprove');
 	Route::get('delete/{id}', 'FormController@deleteEntry');
+	Route::post('delete/{id}', 'FormController@ajaxDelete');
 });
 
