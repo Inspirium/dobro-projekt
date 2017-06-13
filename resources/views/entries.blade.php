@@ -36,14 +36,14 @@
         <script>
             function approveEntry(e, id) {
                 e.preventDefault();
-                jQuery.post('http://dobro.dev/admin/approve/'+id, {}, function() {
+                jQuery.post('http://dobro.inspirium.hr/admin/approve/'+id, {}, function() {
                     jQuery(e.target).remove();
                 });
                 return false;
             }
             function deleteEntry(e, id){
                 e.preventDefault();
-                jQuery.post('http://dobro.dev/admin/delete/'+id, {}, function() {
+                jQuery.post('http://dobro.inspirium.hr/admin/delete/'+id, {}, function() {
                     jQuery(e.target).parent().parent().remove();
                 });
                 return false;
